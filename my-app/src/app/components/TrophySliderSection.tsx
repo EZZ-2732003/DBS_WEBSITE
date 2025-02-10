@@ -46,7 +46,7 @@ const TrophyCard: React.FC<TrophyCardProps> = ({ trophy, index }) => {
       key={index}
       className="flex-shrink-0 w-full h-screen flex items-center justify-center p-8 snap-start relative z-10"
     >
-      <div className="max-w-4xl w-full bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 relative p-8">
+      <div className="max-w-4xl w-full bg-white/80 rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 relative p-8 backdrop-filter backdrop-blur-md">
         {/* اللوجو في الزاوية العليا من اليمين */}
         <div className="absolute top-8 right-8 w-16 h-16">
           <Image

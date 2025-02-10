@@ -188,7 +188,7 @@ export default function ContactUsPage() {
                     </div>
                   </a>
                   <a
-                    href="https://wa.me/201030090556"
+                    href="https://wa.me/201026684476"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-600 hover:text-green-800 transition duration-200"

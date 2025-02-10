@@ -121,6 +121,12 @@ export default function Navbar() {
               >
                 تواصل معنا
               </Link>
+              <Link
+                href="/cvpage"
+                className="block lg:inline-block text-gray-700 hover:text-blue-600 text-lg font-semibold transition duration-300 transform hover:scale-105 py-2 lg:py-0"
+              >
+                السيرة الذاتية
+              </Link>
             </div>
           </div>
         </div>
