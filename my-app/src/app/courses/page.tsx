@@ -26,6 +26,7 @@ import {
 } from "react-icons/gi";
 import Layout from "../layout";
 import Navbar from "../components/Navbar";
+import TeacherTrainingProgram from "../components/TeacherTrainingProgram"; 
 
 export default function CoursesPage() {
   const floatingIconsRef = useRef<HTMLDivElement>(null);
@@ -323,8 +324,14 @@ export default function CoursesPage() {
                   <p className="text-white">{course.duration}</p>
                 </div>
               </div>
+              
             ))}
+            <div className="md:col-span-2 flex justify-center">
+              <TeacherTrainingProgram />
+            </div>
+           
           </div>
+        
         </div>
       </div>
       <Footer />

@@ -89,7 +89,11 @@ const WideBoxSection = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-[400px] py-16 relative bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden">
+    // إضافة dir="rtl" للعنصر الخارجي لضمان عرض النص من اليمين إلى اليسار
+    <div
+      className="flex justify-center items-center min-h-[400px] py-16 relative bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden"
+      dir="rtl"
+    >
       {/* الأيقونات المتحركة */}
       <div ref={iconsRef} className="absolute inset-0 pointer-events-none">
         <FaBook className="text-6xl text-yellow-400 opacity-30" />
@@ -111,14 +115,17 @@ const WideBoxSection = () => {
       </div>
 
       {/* المحتوى الرئيسي */}
-      <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative z-10">
-        <h2 className="text-4xl font-bold text-center text-blue-600 mb-6">
+      <div
+        className="bg-white rounded-3xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative z-10"
+        dir="rtl"
+      >
+        <h2 className="text-4xl font-bold text-blue-600 mb-6 text-right">
           ما تقدمه الأكاديمية التعليمية
         </h2>
-        <p className="text-xl text-gray-700 text-center leading-relaxed">
+        <p className="text-xl text-gray-700 leading-relaxed text-right">
           في أكاديميتنا، نقدم مجموعة واسعة من البرامج التعليمية المبتكرة والمصممة خصيصًا لتنمية المهارات العقلية والحساب الذهني للأطفال والمراهقين. برامجنا تشمل:
         </p>
-        <ul className="mt-6 text-lg text-gray-700 list-disc list-inside space-y-2">
+        <ul className="mt-6 text-lg text-gray-700 list-disc list-inside space-y-2 text-right">
           <li>تعليم الحساب الذهني باستخدام أحدث الأساليب العلمية.</li>
           <li>تنمية المهارات العقلية مثل التركيز والذاكرة والإبداع.</li>
           <li>دورات متخصصة في الرياضيات والعلوم للأطفال من سن 3 إلى 17 عامًا.</li>

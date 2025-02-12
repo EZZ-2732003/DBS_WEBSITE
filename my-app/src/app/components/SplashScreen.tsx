@@ -84,7 +84,7 @@ const SplashScreen = ({ onFinish }: SplashScreenProps) => {
         ref={titleRef}
         className="text-4xl font-bold text-white"
       >
-        مرحبًا بك في موقعنا
+        مرحبًا بك عزيزي الزائر
       </h1>
       <p
         ref={subtitleRef}

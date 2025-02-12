@@ -24,7 +24,7 @@ import {
   GiSpinningTop,
 } from "react-icons/gi";
 
-// Define the Trophy interface
+// تعريف واجهة Trophy
 interface Trophy {
   logo: string; // اللوجو الخاص بالمسابقة
   title: string;
@@ -33,17 +33,19 @@ interface Trophy {
   details: string; // محتوى تعريفي تفصيلي
 }
 
-// Define the props interface for TrophyCard
+// تعريف الخصائص لمكون TrophyCard
 interface TrophyCardProps {
   trophy: Trophy;
   index: number;
 }
 
-// مكون فرعي لعرض كل مسابقة
+// مكون TrophyCard لعرض كل مسابقة مع دعم RTL
 const TrophyCard: React.FC<TrophyCardProps> = ({ trophy, index }) => {
   return (
+    // إضافة dir="rtl" لضمان أن تكون الكتابة من اليمين إلى اليسار
     <div
       key={index}
+      dir="rtl"
       className="flex-shrink-0 w-full h-screen flex items-center justify-center p-8 snap-start relative z-10"
     >
       <div className="max-w-4xl w-full bg-white/80 rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 relative p-8 backdrop-filter backdrop-blur-md">
@@ -59,9 +61,7 @@ const TrophyCard: React.FC<TrophyCardProps> = ({ trophy, index }) => {
             quality={50} // تقليل جودة اللوجو لتقليل الحجم
           />
         </div>
-        <div className="mt-16">
-          {" "}
-          {/* إضافة هامش أعلى لنص المسابقة */}
+        <div className="mt-16 text-right">
           <h3 className="text-3xl font-bold text-gray-800 mb-6">
             {trophy.title}
           </h3>
@@ -81,20 +81,20 @@ const TrophyCard: React.FC<TrophyCardProps> = ({ trophy, index }) => {
   );
 };
 
-// المكون الرئيسي
+// المكون الرئيسي TrophyScrollSection مع دعم RTL
 const TrophyScrollSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const iconsRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // الحركة التلقائية
+  // الحركة التلقائية للتمرير عبر المسابقات
   useEffect(() => {
     const interval = setInterval(() => {
       if (containerRef.current) {
         const nextIndex = (currentIndex + 1) % trophies.length;
         setCurrentIndex(nextIndex);
 
-        // التمرير إلى المربع التالي
+        // التمرير إلى المربع التالي بشكل سلس
         containerRef.current.scrollTo({
           left: window.innerWidth * nextIndex,
           behavior: "smooth",
@@ -167,6 +167,7 @@ const TrophyScrollSection: React.FC = () => {
     }
   }, []);
 
+  // تعريف مجموعة المسابقات (Trophies)
   const trophies: Trophy[] = [
     {
       logo: "/Picture1.png", // لوجو المسابقة الأولى
@@ -205,7 +206,11 @@ const TrophyScrollSection: React.FC = () => {
   ];
 
   return (
-    <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden min-h-screen">
+    // إضافة dir="rtl" للعنصر الخارجي لضمان أن تكون الكتابة من اليمين إلى اليسار
+    <div
+      className="relative bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden min-h-screen"
+      dir="rtl"
+    >
       {/* الأيقونات المتحركة */}
       <div ref={iconsRef} className="absolute inset-0 pointer-events-none">
         <FaBook className="text-6xl text-yellow-400 opacity-30" />

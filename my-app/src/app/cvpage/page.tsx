@@ -1,19 +1,28 @@
 "use client"; // تأكد من إضافة هذا السطر لأننا نستخدم تفاعلات
+
 import Layout from "../layout";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import Image from "next/image"; // استيراد مكون Image لاستخدام الصور
+import Animation1 from "../components/Animation1"; // استيراد مكون الأنميشن
 
 const SectionContent = () => {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24" dir="rtl">
+      {/* قسم الأنميشن فوق صورة البروفايل */}
+      <div className="flex justify-center mb-4">
+        <div className="w-24 h-24">
+          <Animation1 />
+        </div>
+      </div>
+
       {/* قسم الصورة والعنوان */}
       <div className="flex flex-col items-center mb-8 text-right">
         {/* صورة البروفايل */}
         <Image
           src="/CVPIC.png" // المسار النسبي للصورة
-          alt="غانم سيد "
+          alt="غانم سيد"
           width={150}
           height={150}
           className="rounded-full border-4 border-white mb-4"
@@ -29,7 +38,7 @@ const SectionContent = () => {
         <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-3xl p-6">
           <h3 className="text-xl font-bold text-white mb-4">المعلومات الشخصية</h3>
           <ul className="list-disc list-inside text-white text-sm md:text-base">
-            <li>الاسم: غانم سيد </li>
+            <li>الاسم: غانم سيد</li>
             <li>تاريخ الميلاد: 1 يناير 1984</li>
             <li>الجنسية: مصري</li>
             <li>العنوان: العاشر من رمضان الشرقية مصر</li>
